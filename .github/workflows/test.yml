@@ -10,7 +10,7 @@ jobs:
       - name: Run Lighthouse
         uses: foo-software/lighthouse-check-action@master
         with:
-          accessToken: ${{ secrets.4b5551e022ebc4f50cef5924bc73696638bd9e32  }}
+          accessToken: 4b5551e022ebc4f50cef5924bc73696638bd9e32
       - name: Upload artifacts
         uses: actions/upload-artifact@master
         with:
