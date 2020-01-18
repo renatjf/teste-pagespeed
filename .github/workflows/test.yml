@@ -11,6 +11,7 @@ jobs:
         uses: foo-software/lighthouse-check-action@master
         id: lighthouseCheck
         with:
+          author: ${{ github.actor }}
           urls: 'https://evfront.estantevirtual.com.br'
       - name: Resultado PageSpeed
         uses: foo-software/lighthouse-check-status-action@master
