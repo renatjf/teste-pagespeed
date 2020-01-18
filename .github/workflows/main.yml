@@ -1,10 +1,9 @@
-language: node_js
-node_js:
-  - 10
-before_install:
-  - npm install -g @lhci/cli@0.3.x
-script:
-  - npm run build
-  - lhci autorun
-addons:
-  chrome: stable
+- name: Run Lighthouse and test budgets
+  uses: treosh/lighthouse-ci-action@v2
+  with:
+    urls: |
+      https://pr-$PR_NUMBER.evfront-stg.estantevirtual.com.br/
+    budgetPath: ./budgets.json
+    temporaryPublicStorage: true
+    env:
+      PR_NUMBER: ${{ github.event.pull_request.number }}
