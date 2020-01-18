@@ -1,20 +1,24 @@
-name: Build project and Run Lighthouse CI
+name: Test Lighthouse Check
 on: [push]
+
 jobs:
-  lhci:
-    name: Lighthouse CI
+  lighthouse-check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js 10.x
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@master
+      - run: mkdir /tmp/artifacts
+      - name: Run Lighthouse
+        uses: foo-software/lighthouse-check-action@master
         with:
-          node-version: 10.x
-      - name: npm install, build
-        run: |
-          npm install
-          npm run build
-      - name: run Lighthouse CI
-        run: |
-          npm install -g @lhci/cli@0.3.x
-          lhci autorun --upload.target=temporary-public-storage || echo "PageSpeed Falhou!!!"
+          accessToken: ${{ secrets.74cc41d3fddc9b7977b29ae260d06637bc7b2f1d  }}
+          author: ${{ github.actor }}
+          branch: ${{ github.ref }}
+          outputDirectory: /tmp/artifacts
+          urls: 'https://evfront.estantevirtual.com.br'
+          sha: ${{ github.sha }}
+          slackWebhookUrl: ${{ secrets.https://hooks.slack.com/services/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 }}
+      - name: Upload artifacts
+        uses: actions/upload-artifact@master
+        with:
+          name: Lighthouse reports
+          path: /tmp/artifacts
