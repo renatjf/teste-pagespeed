@@ -1,0 +1,24 @@
+name: Test Lighthouse Check
+on: [push]
+
+jobs:
+  lighthouse-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - run: mkdir /tmp/artifacts
+      - name: Run Lighthouse
+        uses: foo-software/lighthouse-check-action@master
+        with:
+          accessToken: 74cc41d3fddc9b7977b29ae260d06637bc7b2f1d
+          author: ${{ github.actor }}
+          branch: ${{ github.ref }}
+          outputDirectory: /tmp/artifacts
+          urls: 'https://evfront.estantevirtual.com.br'
+          sha: ${{ github.sha }}
+          slackWebhookUrl: https://hooks.slack.com/services/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
+      - name: Upload artifacts
+        uses: actions/upload-artifact@master
+        with:
+          name: Lighthouse reports
+          path: /tmp/artifacts
