@@ -1,11 +1,17 @@
 {
   "ci": {
+    "collect": {
+      "numberOfRuns": 3
+    },
     "assert": {
       "preset": "lighthouse:recommended",
       "assertions": {
-        "categories:performance": ["warn", {"minScore": 80}],
-        "categories:accessibility": ["error", {"minScore": 80}]
+        "offscreen-images": "off",
+        "uses-webp-images": "off"
       }
+    },
+    "upload": {
+      "target": "temporary-public-storage"
     }
   }
 }
