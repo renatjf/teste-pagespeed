@@ -11,7 +11,7 @@ jobs:
         uses: foo-software/lighthouse-check-action@master
         id: lighthouseCheck
         with:
-          urls: 'https://evfront.estantevirtual.com.br
+          urls: 'https://evfront.estantevirtual.com.br'
       - name: Resultado PageSpeed
         uses: foo-software/lighthouse-check-status-action@master
         with:
