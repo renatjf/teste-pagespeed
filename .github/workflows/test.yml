@@ -11,10 +11,20 @@ jobs:
         uses: foo-software/lighthouse-check-action@master
         id: lighthouseCheck
         with:
+          accessToken: 38709dc85cd0c137cfe0dc33dbc336131ea045af 
           author: ${{ github.actor }}
+          branch: ${{ github.ref }}
+          outputDirectory: /tmp/artifacts
           urls: 'https://evfront.estantevirtual.com.br'
+          sha: ${{ github.sha }}
+          slackWebhookUrl: https://hooks.slack.com/services/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
       - name: Resultado PageSpeed
         uses: foo-software/lighthouse-check-status-action@master
+        - name: Upload artifacts
+        uses: actions/upload-artifact@master
+        with:
+          name: Lighthouse reports
+          path: /tmp/artifacts
         with:
           lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
           minAccessibilityScore: "1"
