@@ -12,7 +12,11 @@ jobs:
         id: lighthouseCheck
         with:
           urls: 'https://evfront.estantevirtual.com.br'
-          # ... all your other inputs
+          author: ${{ github.actor }}
+          branch: ${{ github.ref }}
+          outputDirectory: /tmp/artifacts
+          sha: ${{ github.sha }}
+          slackWebhookUrl: ${{ secrets.https://hooks.slack.com/services/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 }}
       - name: Handle Lighthouse Check results
         uses: foo-software/lighthouse-check-status-action@master
         with:
