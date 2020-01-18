@@ -1,4 +1,4 @@
-name: Test Lighthouse Check with Minimum Score Enforcement
+name: Teste PageSpeed EVA
 on: [push]
 
 jobs:
@@ -7,13 +7,12 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - run: npm install
-      - name: Run Lighthouse
+      - name: Testando PageSpeed
         uses: foo-software/lighthouse-check-action@master
         id: lighthouseCheck
         with:
-          urls: 'http://localhost:8080'
-          # ... all your other inputs
-      - name: Handle Lighthouse Check results
+          urls: 'https://evfront.estantevirtual.com.br
+      - name: Resultado PageSpeed
         uses: foo-software/lighthouse-check-status-action@master
         with:
           lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
