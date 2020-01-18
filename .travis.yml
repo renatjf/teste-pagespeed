@@ -1,11 +1,8 @@
-# dist: xenial (the default) or newer required
-language: node_js # Node 10 LTS or later required
+language: node_js
 addons:
-  chrome: stable # make Chrome available
+  chrome: stable
 before_install:
-  - npm install -g @lhci/cli@0.3.x # install LHCI
+  - npm install -g @lhci/cli@0.3.x
 script:
   - npm run build # build your site
-  - npm test # run your normal tests
-after_success:
-  - lhci autorun --upload.target=temporary-public-storage # run lighthouse CI against your static site
+  - lhci autorun # run lighthouse CI
