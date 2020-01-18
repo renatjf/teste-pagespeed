@@ -1,4 +1,0 @@
-install:
-  - npm install 
-after_success:
-  - npm run lh -- --perf=96 --pwa=100 https://evfront.estantevirtual.com.br

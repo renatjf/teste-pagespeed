@@ -9,9 +9,12 @@ jobs:
         uses: treosh/lighthouse-ci-action@v2
         with:
           urls: |
-            https://evfront.estantevirtual.com.br/
+            https://pr-$PR_NUMBER
       - name: Save results
         uses: actions/upload-artifact@v1
         with:
           name: lighthouse-results
           path: '.lighthouseci' # This will save the Lighthouse results as .json files
+          temporaryPublicStorage: true
+          env:
+            PR_NUMBER: ${{ github.event.pull_request.number }}
