@@ -1,8 +1,8 @@
 on: push
-name: Mainflow
+name: PageSpeed-EVA
 jobs:
   build-and-codechecks:
-    name: build and run codechecks
+    name: Teste PageSpeed-EVA
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
