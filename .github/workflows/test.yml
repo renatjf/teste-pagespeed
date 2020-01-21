@@ -10,11 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Esta etapa usa hello-world-javascript-action do GitHub: https://github.com/actions/hello-world-javascript-action
-      - name: Olá PageSpeed
       - uses: actions/setup-node@v1
         with:
-          who-to-greet: 'Mona the Octocat'
-          node-version: 10.x
-      # Esta etapa imprime uma saída (tempo) da ação da etapa anterior.
-      - name: Echo the greeting's time
-        run: echo 'The time was ${{ steps.hello.outputs.time }}.'
+          author: ${{ github.actor }}
