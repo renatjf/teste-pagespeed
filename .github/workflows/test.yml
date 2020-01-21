@@ -1,4 +1,4 @@
-name: Teste PageSpeed EVA
+name: Lighthouse Check
 on: [push]
 
 jobs:
@@ -7,28 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - run: npm install
-      - name: Testando PageSpeed
+      - name: Run Lighthouse
         uses: foo-software/lighthouse-check-action@master
         id: lighthouseCheck
         with:
-          accessToken: 38709dc85cd0c137cfe0dc33dbc336131ea045af 
-          author: ${{ github.actor }}
-          branch: ${{ github.ref }}
-          outputDirectory: /tmp/artifacts
-          urls: 'https://evfront.estantevirtual.com.br'
-          sha: ${{ github.sha }}
-          slackWebhookUrl: https://hooks.slack.com/services/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
-      - name: Resultado PageSpeed
-        uses: foo-software/lighthouse-check-status-action@master
-        - name: Upload artifacts
-        uses: actions/upload-artifact@master
-        with:
-          name: Lighthouse reports
-          path: /tmp/artifacts
-        with:
-          lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
-          minAccessibilityScore: "1"
-          minBestPracticesScore: "1"
-          minPerformanceScore: "1"
-          minProgressiveWebAppScore: "1"
-          minSeoScore: "1"
+          apiToken: '5e1db8955b42ae003ab0d770_c91b455d-9d55-4e77-9b8c-cc36d41bd4fc'
+          # ... all your other inputs
