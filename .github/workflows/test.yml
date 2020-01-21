@@ -1,6 +1,4 @@
-name: Teste PageSpeed
-on: [push, pull_request]
-
+on: push
 name: Mainflow
 jobs:
   build-and-codechecks:
@@ -11,7 +9,5 @@ jobs:
       - name: yarn
         run: |
           yarn install --frozen-lockfile
-
-          npx codechecks
-        env:
-          CC_SECRET: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0U2VjcmV0IjoiZjczODMyNDQtNzExOS00NDBlLTkyYTAtMzM5NzYxMmY3NTQ2In0.PpQ2iK6tRUYZpdGdj07dMlGXq1YuefCLWbV3tllGLhA
+          yarn
+          yarn teste
