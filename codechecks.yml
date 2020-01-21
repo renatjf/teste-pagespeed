@@ -1,4 +1,5 @@
 checks:
   - name: lighthouse-keeper
     options:
+      CC_SECRET: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0U2VjcmV0IjoiZjczODMyNDQtNzExOS00NDBlLTkyYTAtMzM5NzYxMmY3NTQ2In0.PpQ2iK6tRUYZpdGdj07dMlGXq1YuefCLWbV3tllGLhA
       buildPath: ./build
