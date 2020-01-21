@@ -8,6 +8,6 @@ jobs:
       - uses: actions/checkout@master
       - name: yarn
         run: |
-          yarn install --frozen-lockfile
           yarn
+          yarn build
           yarn teste
