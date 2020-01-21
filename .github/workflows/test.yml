@@ -13,3 +13,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           author: ${{ github.actor }}
+          install: yarn
+          build: yarn build
+          teste: yarn teste
