@@ -1,17 +1,17 @@
-name: Cumprimentar a Todos
-# Este fluxo de trabalho é acionado em pushes para o repositório.
+name: Teste PageSpeed
 on: [push, pull_request]
 
+name: Mainflow
 jobs:
-  build:
-    # o nome do trabalho é greeting (cumprimentar)
-    name: Teste
-    # Este trabalho executa no Linux
+  build-and-codechecks:
+    name: build and run codechecks
     runs-on: ubuntu-latest
     steps:
-      # Esta etapa usa hello-world-javascript-action do GitHub: https://github.com/actions/hello-world-javascript-action
-      - name: Hello world
-        uses: actions/setup-node@v10
+      - uses: actions/checkout@master
+      - name: yarn
         run: |
-        npm ci
-        npm run build
+          yarn install --frozen-lockfile
+
+          npx codechecks
+        env:
+          CC_SECRET: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0U2VjcmV0IjoiZjczODMyNDQtNzExOS00NDBlLTkyYTAtMzM5NzYxMmY3NTQ2In0.PpQ2iK6tRUYZpdGdj07dMlGXq1YuefCLWbV3tllGLhA
