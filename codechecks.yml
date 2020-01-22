@@ -7,9 +7,9 @@ checks:
       # url: https://google.com
       # you can specify minScores and automatically fail builds
       minScores:
-        performance: 1000
-        accessibility: 1000
-        best-practices: 1000
-        seo: 1000
-        pwa: 1000
+        performance: 95
+        accessibility: 95
+        best-practices: 95
+        seo: 95
+        pwa: 95
   # ...
