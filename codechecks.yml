@@ -1,5 +1,5 @@
 checks:
-  - name: teste-pagaspeed-eva
+  - name: lighthouse-keeper
     options:
       buildPath: ./dist
       # url: https://
