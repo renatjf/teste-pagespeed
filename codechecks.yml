@@ -3,4 +3,4 @@ checks:
     options:
       buildPath: ./dist
     minScores:
-      performance: 90
+      performance: 100
