@@ -1,16 +1,15 @@
 on: push
-name: PageSpeed-EVA
+name: Mainflow
 jobs:
   build-and-codechecks:
-    name: Teste PageSpeed-EVA
+    name: build and run codechecks
     runs-on: ubuntu-latest
     steps:
-
       - uses: actions/checkout@master
-      - name: Rodando o Build
+      - name: yarn
         run: |
-          yarn
-          yarn build
-          yarn codechecks
+          yarn install --frozen-lockfile
+
+          npx codechecks
         env:
           CC_SECRET: ${{ secrets.CC_SECRET }}
