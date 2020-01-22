@@ -5,11 +5,20 @@ jobs:
     name: Teste PageSpeed-EVA
     runs-on: ubuntu-latest
     steps:
+      - restore_cache:
+        key: v1-dep-{{ checksum "yarn.lock" }}
+
       - uses: actions/checkout@master
-      - name: yarn
+      - name: Rodando o build
         run: |
           yarn
           yarn build
           yarn codechecks
         env:
           CC_SECRET: ${{ secrets.CC_SECRET }}
+
+        - save_cache:
+            paths:
+              - ./node_modules
+              - ~/.cache
+            key: v1-dep-{{ checksum "yarn.lock" }}
