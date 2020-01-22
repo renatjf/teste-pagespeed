@@ -1,4 +1,7 @@
 checks:
-  - name: lighthouse-keeper
+  - name: Teste LightHouse
     options:
       buildPath: ./dist
+      url: https://evfront.estantevirtual.com.br
+      minScores:
+        performance: 90
