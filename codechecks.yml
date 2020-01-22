@@ -1,6 +1,15 @@
 checks:
   - name: lighthouse-keeper
     options:
+      # just provide path to your build
       buildPath: ./dist
-    minScores:
-      performance: 100
+      # or full url
+      # url: https://google.com
+      # you can specify minScores and automatically fail builds
+      minScores:
+        performance: 1000
+        accessibility: 1000
+        best-practices: 1000
+        seo: 1000
+        pwa: 1000
+  # ...
