@@ -1,5 +1,5 @@
 checks:
-  - name: Teste SpeegPage-EVA
+  - name: lighthouse-keeper
     options:
       # just provide path to your build
       buildPath: ./dist
@@ -11,4 +11,4 @@ checks:
         best-practices: 90
         seo: 90
         pwa: 90
-        
+  # ...
