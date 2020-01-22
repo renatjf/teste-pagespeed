@@ -1,15 +1,14 @@
 checks:
-  - name: lighthouse-keeper
+  - name: Teste SpeegPage-EVA
     options:
       # just provide path to your build
       buildPath: ./dist
-      # or full url
       # url: https://google.com
       # you can specify minScores and automatically fail builds
       minScores:
-        performance: 95
-        accessibility: 95
-        best-practices: 95
-        seo: 95
-        pwa: 95
-  # ...
+        performance: 90
+        accessibility: 90
+        best-practices: 90
+        seo: 90
+        pwa: 90
+        
