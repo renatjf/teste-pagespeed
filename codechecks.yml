@@ -1,8 +1,8 @@
 checks:
-  - name: lighthouse-keeper
+  - name: teste-pagaspeed-eva
     options:
       buildPath: ./dist
-      url: https://www.estantevirtual.com.br
+      # url: https://
       minScores:
         performance: 90
         accessibility: 90
