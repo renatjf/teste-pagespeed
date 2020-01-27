@@ -1,4 +1,4 @@
-name: PageSpeed-EVA 2
+name: PageSpeed-EVA
 on: push
 
 jobs:
@@ -9,4 +9,9 @@ jobs:
       - uses: actions/checkout@master
       - name: Executando o build Ev-Front
         run: |
+          yarn install --frozen-lockfile
+          yarn build
           yarn lint
+          npx codechecks
+        env:
+          CC_SECRET: ${{ secrets.CC_SECRET }}
