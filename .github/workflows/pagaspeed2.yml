@@ -1,0 +1,12 @@
+name: PageSpeed-EVA 2
+on: push
+
+jobs:
+  build-and-codechecks:
+    name: Teste PageSpeed-EVA
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Executando o build Ev-Front
+        run: |
+          yarn lint
